@@ -1,0 +1,98 @@
+.auth-loading {
+  min-height: 100vh;
+  padding: 0 7.2%;
+  display: flex;
+  flex-direction: column;
+  color: #242622;
+  background: #f5f4f0;
+}
+.auth-loading__header {
+  width: 100%;
+  max-width: 1060px;
+  height: 70px;
+  margin: 22px auto 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e4de;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 5px 18px rgba(39, 40, 34, .035);
+}
+.auth-loading__mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #aeb3a4;
+  border-radius: 50%;
+  color: #52634a;
+  font: 23px/1 "Playfair Display", Georgia, serif;
+}
+.auth-loading__brand { color: #292b26; font-size: 21px; font-weight: 700; letter-spacing: -1px; }
+.auth-loading__brand > span { color: #7c806b; }
+.auth-loading__brand small { display: block; margin-top: 1px; color: #898b81; font-size: 7px; font-weight: 500; letter-spacing: 1.45px; }
+.auth-loading__content {
+  width: min(100%, 670px);
+  margin: auto;
+  padding: 76px 24px 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(36px, 8vw, 90px);
+}
+.auth-loading__preview {
+  width: 184px;
+  min-width: 184px;
+  overflow: hidden;
+  border: 1px solid #e0dfd7;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(39, 40, 34, .07);
+  animation: loading-float 3.5s ease-in-out infinite;
+}
+.auth-loading__preview-top { height: 18px; padding: 0 8px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #ebeae5; }
+.auth-loading__preview-top span { width: 4px; height: 4px; border-radius: 50%; background: #d5d6ce; }
+.auth-loading__preview-body { padding: 16px; display: flex; flex-direction: column; align-items: flex-start; }
+.auth-loading__avatar { width: 27px; height: 27px; margin-bottom: 10px; border-radius: 50%; background: #e6e8df; }
+.auth-loading__line { width: 100%; height: 5px; margin-top: 7px; border-radius: 8px; background: #ecece7; }
+.auth-loading__line--title { width: 62%; height: 7px; margin-top: 0; background: #cdd2c4; }
+.auth-loading__line--short { width: 43%; margin-top: 6px; }
+.auth-loading__line--wide { width: 88%; }
+.auth-loading__line--medium { width: 71%; }
+.auth-loading__rule { width: 100%; height: 1px; margin: 14px 0 3px; background: #e4e4dd; }
+.auth-loading__message { min-width: 230px; }
+.auth-loading__spinner {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin-bottom: 20px;
+  border: 2px solid #d9dbd2;
+  border-top-color: #617153;
+  border-radius: 50%;
+  animation: loading-spin .9s linear infinite;
+}
+.auth-loading__message h1 { margin: 0; color: #292b26; font: 500 24px "Playfair Display", Georgia, serif; letter-spacing: -.3px; }
+.auth-loading__message p { margin: 8px 0 17px; color: #81837a; font-size: 11px; }
+.auth-loading__progress { height: 2px; overflow: hidden; display: block; background: #e4e4dd; }
+.auth-loading__progress i { width: 36%; height: 100%; display: block; background: #7b876c; animation: loading-progress 1.7s ease-in-out infinite; }
+.auth-loading__footer { width: 100%; max-width: 1060px; min-height: 52px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-top: 1px solid #deddd6; color: #888981; font-size: 9px; }
+
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+@keyframes loading-progress { 0% { transform: translateX(-110%); } 100% { transform: translateX(290%); } }
+@keyframes loading-float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-5px) rotate(0deg); } }
+
+@media (max-width: 600px) {
+  .auth-loading { padding: 0 18px; }
+  .auth-loading__header { height: 62px; margin-top: 14px; padding: 0 13px; }
+  .auth-loading__content { padding: 65px 0; flex-direction: column; gap: 30px; text-align: center; }
+  .auth-loading__preview { width: 142px; min-width: 142px; }
+  .auth-loading__preview-body { padding: 12px; }
+  .auth-loading__spinner { margin: 0 auto 15px; }
+  .auth-loading__message { min-width: 0; width: min(100%, 270px); }
+  .auth-loading__message h1 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .auth-loading__preview, .auth-loading__spinner, .auth-loading__progress i { animation: none; }
+}

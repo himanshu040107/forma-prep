@@ -1,0 +1,229 @@
+.interview-home {
+  min-height: 100vh;
+  padding: 0 7.2%;
+  overflow: hidden;
+  color: #242622;
+  background: #f5f4f0;
+}
+
+.interview-topbar {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  height: 70px;
+  margin: 22px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e4de;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 5px 18px rgba(39, 40, 34, .035);
+}
+
+.interview-nav { display: flex; align-items: center; gap: 31px; height: 100%; }
+.interview-nav a { position: relative; color: #85867e; text-decoration: none; font-size: 12px; transition: color .2s ease; }
+.interview-nav a:hover, .interview-nav .nav-current { color: #394d35; }
+.interview-nav .nav-current::after { position: absolute; right: 0; bottom: -26px; left: 0; height: 2px; content: ""; background: #718066; }
+.interview-user { display: flex; align-items: center; gap: 15px; }
+.user-greeting { color: #73756d; font-size: 12px; }
+.interview-user button { min-height: 35px; padding: 0 13px; display: flex; align-items: center; gap: 13px; border: 1px solid #d7d7cf; border-radius: 20px; color: #394d35; background: transparent; cursor: pointer; font-size: 12px; transition: background .2s, transform .2s; }
+.interview-user button:hover { transform: translateY(-1px); background: #f1f1eb; }
+.interview-user button:disabled { opacity: .6; cursor: wait; }
+
+.interview-hero {
+  position: relative;
+  max-width: 1180px;
+  min-height: 360px;
+  margin: 0 auto;
+  padding: 74px 7.4% 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 265px;
+  align-items: center;
+  gap: 70px;
+  isolation: isolate;
+}
+.hero-copy { position: relative; z-index: 1; max-width: 610px; animation: home-enter .55s cubic-bezier(.2, .75, .25, 1) both; }
+.interview-home .eyebrow { display: flex; align-items: center; gap: 8px; color: #747767; font-size: 10px; font-weight: 600; letter-spacing: 1.7px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #7a8969; box-shadow: 0 0 0 4px rgba(122, 137, 105, .11); }
+.hero-copy h1 { margin: 22px 0 15px; color: #252722; font: 500 clamp(42px, 5.15vw, 66px)/1.09 "Playfair Display", Georgia, serif; letter-spacing: -1.8px; }
+.hero-copy h1 em, .hero-note p em, .aside-feature h3 em { color: #59684e; font-style: normal; }
+.hero-description { max-width: 475px; color: #62645d; font-size: 18px; line-height: 1.7; }
+.hero-link { margin-top: 22px; display: inline-flex; align-items: center; gap: 14px; color: #43523d; text-decoration: none; font-size: 12px; font-weight: 600; }
+.hero-link span { transition: transform .2s ease; }
+.hero-link:hover span { transform: translateY(3px); }
+.hero-note { position: relative; z-index: 1; min-height: 185px; padding: 25px 24px; border: 1px solid #e2e1da; background: rgba(255, 255, 255, .58); animation: home-enter .6s .08s cubic-bezier(.2, .75, .25, 1) both; }
+.note-index { color: #898b81; font-size: 9px; font-weight: 600; letter-spacing: 1.15px; }
+.note-rule { width: 30px; height: 1px; margin: 16px 0 14px; background: #a9ae9e; }
+.hero-note p { color: #52564d; font: 500 15px/1.7 "Playfair Display", Georgia, serif; }
+.note-stamp { position: absolute; right: 20px; bottom: 13px; color: rgba(89, 104, 78, .2); font: 500 52px "Playfair Display", Georgia, serif; }
+.hero-orbit { position: absolute; z-index: -1; border: 1px solid rgba(169, 174, 158, .25); border-radius: 50%; pointer-events: none; }
+.orbit-one { top: 21px; right: -75px; width: 305px; height: 305px; }
+.orbit-two { top: 49px; right: -47px; width: 250px; height: 250px; }
+
+.previous-reports { max-width: 1180px; margin: 0 auto 20px; padding: 29px 7.4% 32px; border: 1px solid #e5e4de; background: rgba(255, 255, 255, .65); scroll-margin-top: 20px; }
+.previous-reports-heading { margin-bottom: 19px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.previous-reports-heading .eyebrow { margin-bottom: 7px; color: #747767; font-size: 9px; font-weight: 600; letter-spacing: 1.4px; }
+.previous-reports-heading h2 { color: #292b26; font: 500 25px/1.25 "Playfair Display", Georgia, serif; }
+.previous-reports-heading > div > p:last-child { margin-top: 5px; color: #696b63; font-size: 13px; line-height: 1.5; }
+.report-count { padding: 7px 10px; border: 1px solid #dfe2d8; border-radius: 20px; color: #59684e; background: #f7f8f4; font-size: 11px; white-space: nowrap; }
+.previous-reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.previous-report-card { position: relative; min-height: 174px; padding: 0 18px; display: flex; flex-direction: column; align-items: stretch; border: 1px solid #e5e4de; color: inherit; background: #fff; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.previous-report-card:hover { transform: translateY(-2px); border-color: #b9c2b0; box-shadow: 0 8px 20px rgba(39, 40, 34, .06); }
+.previous-report-link { min-height: 133px; padding-top: 16px; display: flex; flex-direction: column; align-items: flex-start; color: inherit; text-decoration: none; }
+.previous-report-link:focus-visible { outline: 2px solid #75836a; outline-offset: 3px; }
+.previous-report-label { margin-bottom: 9px; color: #85877e; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.previous-report-link > strong { max-width: 100%; color: #343630; font: 600 16px/1.4 "Playfair Display", Georgia, serif; }
+.previous-report-score { margin-top: 8px; color: #74766f; font-size: 11px; }
+.previous-report-score b { margin-left: 4px; color: #53634a; font-weight: 700; }
+.previous-report-open { width: 100%; margin-top: auto; padding: 12px 0 11px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #efeee9; color: #53634a; font-size: 12px; font-weight: 600; }
+.previous-report-open > span { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid #dfe3da; border-radius: 50%; color: #53634a; background: #f7f8f4; font-size: 15px; line-height: 1; transition: transform .18s ease, background .18s ease; }
+.previous-report-card:hover .previous-report-open > span { transform: translateX(2px); background: #edf0e9; }
+.previous-report-delete { position: absolute; top: 11px; right: 11px; width: 30px; height: 30px; padding: 0; display: grid; place-items: center; border: 1px solid transparent; border-radius: 50%; color: #85877e; background: transparent; cursor: pointer; transition: color .18s ease, background .18s ease, border-color .18s ease; }
+.previous-report-delete svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.35; }
+.previous-report-delete:hover { border-color: #efddd9; color: #aa3427; background: #fbf1ee; }
+.previous-report-delete:focus-visible { outline: 2px solid #aa3427; outline-offset: 2px; }
+.previous-report-delete:disabled { opacity: .6; cursor: wait; }
+.previous-reports-error { margin-top: 12px; color: #a33b32; font-size: 13px; line-height: 1.5; }
+.delete-dialog-backdrop { position: fixed; z-index: 20; inset: 0; padding: 20px; display: grid; place-items: center; background: rgba(30, 32, 27, .48); backdrop-filter: blur(3px); animation: dialog-fade-in .16s ease both; }
+.delete-dialog { width: min(100%, 440px); padding: 30px; border: 1px solid #e5e4de; background: #fff; box-shadow: 0 22px 70px rgba(20, 22, 18, .22); animation: dialog-rise-in .2s ease both; }
+.delete-dialog-icon { width: 44px; height: 44px; margin-bottom: 19px; display: grid; place-items: center; border: 1px solid #efddd9; border-radius: 50%; color: #a34c3c; background: #fbf1ee; }
+.delete-dialog-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+.delete-dialog-eyebrow { color: #8d625b; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; }
+.delete-dialog h2 { margin-top: 8px; color: #292b26; font: 500 26px/1.25 "Playfair Display", Georgia, serif; }
+.delete-dialog > p:last-of-type { margin-top: 11px; color: #62645d; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.delete-dialog-actions { margin-top: 25px; display: flex; justify-content: flex-end; gap: 10px; }
+.delete-dialog-actions button { min-height: 42px; padding: 0 15px; border: 1px solid #d8d9d1; border-radius: 3px; cursor: pointer; font: inherit; font-size: 13px; font-weight: 600; transition: background .18s ease, border-color .18s ease; }
+.delete-dialog-cancel { color: #4e5149; background: #fff; }
+.delete-dialog-cancel:hover:not(:disabled) { background: #f5f5f1; }
+.delete-dialog-confirm { border-color: #9e463b !important; color: #fff; background: #9e463b; }
+.delete-dialog-confirm:hover:not(:disabled) { border-color: #853a31 !important; background: #853a31; }
+.delete-dialog-actions button:disabled { opacity: .6; cursor: wait; }
+.delete-dialog-actions button:focus-visible { outline: 2px solid #748366; outline-offset: 2px; }
+@keyframes dialog-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dialog-rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.previous-reports-empty { padding: 18px; border: 1px dashed #d4d6cc; color: #696b63; background: rgba(255, 255, 255, .55); font-size: 13px; line-height: 1.6; }
+.previous-reports-empty > span { color: #748366; font-size: 16px; }
+.previous-reports-empty a { margin-top: 7px; display: inline-flex; gap: 8px; color: #53634a; font-size: 12px; font-weight: 600; text-decoration: none; }
+.previous-reports-empty a:hover { text-decoration: underline; }
+
+.interview-workspace { max-width: 1180px; margin: 0 auto; padding: 40px 7.4% 67px; border: 1px solid #e5e4de; background: rgba(255, 255, 255, .52); }
+.workspace-heading { margin-bottom: 32px; display: flex; justify-content: space-between; align-items: end; }
+.workspace-heading .eyebrow { margin-bottom: 9px; }
+.workspace-heading h2 { color: #292b26; font: 500 26px "Playfair Display", Georgia, serif; letter-spacing: -.45px; }
+.step-indicator { display: flex; align-items: center; gap: 9px; color: #a1a299; font-size: 8px; letter-spacing: .6px; }
+.step-indicator b { color: #53634a; font-weight: 700; }
+.step-indicator i { width: 21px; height: 1px; background: #deded7; }
+.workspace-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 46px; align-items: start; }
+.prep-form { min-width: 0; }
+.form-section-title { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; }
+.form-section-title > span { width: 22px; height: 22px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid #dfe1d8; border-radius: 50%; color: #68755d; font-size: 8px; }
+.form-section-title h3 { margin: 1px 0 4px; color: #343630; font: 600 15px "Playfair Display", Georgia, serif; }
+.form-section-title p { color: #696b63; font-size: 13px; line-height: 1.6; }
+.resume-dropzone { width: 100%; min-height: 64px; padding: 11px 14px; display: flex; align-items: center; gap: 12px; border: 1px dashed #c9cbbf; border-radius: 3px; color: #444740; background: rgba(255, 255, 255, .56); text-align: left; cursor: pointer; transition: border-color .2s, background .2s; }
+.resume-dropzone:hover, .resume-dropzone.has-file { border-color: #87927b; background: #fbfcf9; }
+.upload-icon { width: 31px; height: 31px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid #e3e4dd; border-radius: 50%; color: #647358; font-size: 16px; }
+.upload-copy { min-width: 0; display: flex; flex: 1; flex-direction: column; gap: 4px; }
+.upload-copy strong { overflow: hidden; color: #43463f; font-size: 14px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.upload-copy small { color: #696b63; font-size: 12px; }
+.browse-link { color: #53634a; font-size: 13px; font-weight: 600; }
+.section-spaced { margin-top: 28px; }
+.field-label { margin: 0 0 7px; display: block; color: #3d3f39; font-size: 14px; font-weight: 600; }
+.prep-form textarea { width: 100%; min-height: 80px; margin-bottom: 1px; padding: 11px 12px; resize: vertical; border: 1px solid #deded8; border-radius: 3px; outline: 0; color: #282a25; background: rgba(255, 255, 255, .74); font: 16px/1.65 "DM Sans", sans-serif; transition: border-color .18s, box-shadow .18s; }
+.prep-form textarea::placeholder { color: #777970; }
+.prep-form textarea:focus { border-color: #7a876d; box-shadow: 0 0 0 2px rgba(92, 108, 78, .09); }
+.job-title { margin-bottom: 15px; }
+.interview-error { margin: 13px 0 0; color: #a33b32; font-size: 10px; line-height: 1.5; }
+.form-submit-row { margin-top: 19px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.form-submit-row > p { color: #696b63; font-size: 11px; }
+.create-plan-button { min-height: 46px; padding: 0 15px; display: flex; align-items: center; gap: 18px; border: 1px solid #394533; border-radius: 3px; color: white; background: #394533; cursor: pointer; font-size: 14px; font-weight: 600; transition: background .2s, transform .2s, box-shadow .2s; }
+.create-plan-button:hover { transform: translateY(-1px); background: #4c5c44; box-shadow: 0 5px 12px rgba(57, 69, 51, .16); }
+.create-plan-button:disabled { opacity: .67; cursor: wait; transform: none; box-shadow: none; }
+.create-plan-button span { font-size: 14px; }
+.prep-aside { display: flex; flex-direction: column; gap: 15px; }
+.aside-card { padding: 23px 21px; border: 1px solid #e5e4de; background: #fff; }
+.aside-topline { display: flex; justify-content: space-between; align-items: center; color: #86887e; font-size: 7px; font-weight: 600; letter-spacing: 1px; }
+.aside-topline span:last-child { color: #78856c; font-size: 15px; }
+.aside-feature h3 { margin: 20px 0 9px; color: #2d302a; font: 500 21px/1.28 "Playfair Display", Georgia, serif; letter-spacing: -.45px; }
+.aside-feature > p { color: #696b63; font-size: 13px; line-height: 1.8; }
+.feature-list { margin-top: 19px; border-top: 1px solid #eeede8; }
+.feature-list > div { padding: 12px 0 10px; display: flex; gap: 10px; border-bottom: 1px solid #eeede8; }
+.feature-list > div > span { color: #89917c; font-size: 8px; }
+.feature-list p { display: flex; flex-direction: column; gap: 4px; }
+.feature-list b { color: #41433d; font-size: 13px; font-weight: 600; }
+.feature-list small { color: #696b63; font-size: 12px; }
+.aside-quote { position: relative; min-height: 114px; padding: 18px 20px; border: 1px solid #e5e4de; background: #efefe8; }
+.aside-quote > span { position: absolute; top: 5px; right: 14px; color: #c2c7b9; font: 500 44px "Playfair Display", serif; }
+.aside-quote p { max-width: 195px; color: #52564d; font: 500 13px/1.7 "Playfair Display", Georgia, serif; }
+.aside-quote small { margin-top: 10px; display: block; color: #8b8d82; font-size: 7px; letter-spacing: 1px; }
+.report-result { padding: 20px; border: 1px solid #cbd3c2; background: #f7f8f4; animation: home-enter .35s ease both; }
+.report-result .eyebrow { color: #68755d; font-size: 7px; }
+.result-score { margin: 17px 0 12px; display: flex; align-items: center; gap: 9px; color: #59684e; }
+.result-score strong { font: 500 39px/1 "Playfair Display", Georgia, serif; }
+.result-score span { color: #888b81; font-size: 8px; line-height: 1.4; }
+.report-result h3 { margin-bottom: 5px; color: #343630; font: 600 13px "Playfair Display", Georgia, serif; }
+.report-result > p:last-child { color: #85877e; font-size: 8px; line-height: 1.6; }
+.interview-footer { max-width: 1180px; height: 62px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #deddd6; color: #888981; font-size: 9px; }
+.interview-footer a { color: #59684e; text-decoration: none; }
+.interview-footer a:hover { text-decoration: underline; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+
+@keyframes home-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .interview-home *, .interview-home *::before, .interview-home *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@media (max-width: 950px) {
+  .interview-home { padding-right: 5%; padding-left: 5%; }
+  .interview-hero { padding-right: 4%; padding-left: 4%; gap: 35px; }
+  .interview-workspace { padding-right: 4%; padding-left: 4%; }
+  .workspace-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 27px; }
+  .aside-card { padding: 19px 16px; }
+}
+
+@media (max-width: 700px) {
+  .interview-home { padding: 0 18px; }
+  .interview-topbar { height: 62px; margin-top: 13px; padding: 0 12px; }
+  .interview-nav { display: none; }
+  .interview-user { gap: 8px; }
+  .user-greeting { max-width: 105px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .interview-user button { min-height: 32px; padding: 0 10px; gap: 7px; font-size: 9px; }
+  .interview-hero { min-height: 0; padding: 54px 3px 38px; grid-template-columns: 1fr; gap: 25px; }
+  .previous-reports { padding: 23px 18px; }
+  .previous-reports-heading h2 { font-size: 22px; }
+  .previous-reports-grid { grid-template-columns: 1fr; }
+  .delete-dialog { padding: 25px 21px; }
+  .delete-dialog h2 { font-size: 23px; }
+  .delete-dialog-actions { flex-direction: column-reverse; }
+  .delete-dialog-actions button { width: 100%; }
+  .hero-copy h1 { font-size: clamp(39px, 11vw, 56px); }
+  .hero-description { max-width: 450px; font-size: 17px; }
+  .hero-note { min-height: 0; max-width: 370px; padding: 17px 19px; }
+  .hero-note p br { display: none; }
+  .note-rule { margin: 10px 0; }
+  .orbit-one { top: 20px; right: -110px; width: 245px; height: 245px; }
+  .orbit-two { top: 43px; right: -87px; width: 200px; height: 200px; }
+  .interview-workspace { padding: 27px 18px 32px; }
+  .workspace-heading { align-items: flex-start; gap: 10px; }
+  .workspace-heading h2 { max-width: 300px; font-size: 22px; line-height: 1.3; }
+  .step-indicator { padding-top: 6px; gap: 5px; font-size: 7px; }
+  .step-indicator i { width: 10px; }
+  .workspace-grid { grid-template-columns: 1fr; gap: 30px; }
+  .prep-aside { display: grid; grid-template-columns: 1fr; }
+  .aside-feature h3 { font-size: 22px; }
+  .form-submit-row { align-items: stretch; flex-direction: column; }
+  .form-submit-row > p { order: 2; }
+  .create-plan-button { justify-content: space-between; }
+  .interview-footer { height: auto; min-height: 58px; gap: 9px; font-size: 8px; }
+  .interview-footer > span:nth-child(2) { display: none; }
+}
+
+@media (max-width: 390px) {
+  .interview-home { padding: 0 13px; }
+  .interview-user .user-greeting { display: none; }
+  .interview-workspace { padding-right: 14px; padding-left: 14px; }
+  .workspace-heading h2 { font-size: 20px; }
+  .step-indicator i { width: 6px; }
+}

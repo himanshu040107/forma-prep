@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body,
+#root {
+    height: 100%;
+    background-color: #f5f4f0;
+    color: #242622;
+}
+body { min-width: 320px; font-size: 16px; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #292b26;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -1.25px;
+}
+.brand-mark { width: 38px; height: 38px; display: block; flex: 0 0 auto; }
+.brand-mark svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.brand-mark rect { fill: #394d35; transition: fill .2s ease; }
+.brand-mark path { fill: none; stroke: #f5f4f0; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+.brand-mark path.brand-spark { stroke: #d6c69a; stroke-width: 1.5; }
+.brand-name { position: relative; display: inline-block; padding-right: 7px; font-family: "Playfair Display", Georgia, serif; }
+.brand-name small { display: block; margin-top: 3px; color: #77796f; font: 600 8px/1 "DM Sans", sans-serif; letter-spacing: 1.5px; }
+.brand-period { color: #8c7951; }
+.brand:hover .brand-mark rect { fill: #4a6043; }
+.brand:focus-visible { outline: 2px solid #748366; outline-offset: 4px; }

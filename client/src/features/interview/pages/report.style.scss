@@ -1,0 +1,141 @@
+.interview-report-page {
+  min-height: 100vh;
+  padding: 0 7.2%;
+  color: #242622;
+  background: #f5f4f0;
+}
+
+.report-heading, .report-layout, .interview-report-page .interview-footer { max-width: 1180px; margin-right: auto; margin-left: auto; }
+.interview-report-page .interview-topbar { max-width: 1180px; }
+.report-heading { padding: 55px 0 31px; display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+.report-heading .eyebrow { margin-bottom: 12px; }
+.report-heading h1 { color: #292b26; font: 500 clamp(32px, 4vw, 46px)/1.15 "Playfair Display", Georgia, serif; letter-spacing: -.8px; }
+.report-heading > div:first-child > p:last-child { margin-top: 10px; color: #62645d; font-size: 17px; line-height: 1.7; }
+.resume-builder-button { min-height: 44px; margin-top: 20px; padding: 0 16px; display: inline-flex; align-items: center; gap: 22px; border: 1px solid #394533; border-radius: 3px; color: #fff; background: #394533; cursor: pointer; font: inherit; font-size: 14px; font-weight: 600; transition: background .18s ease, transform .18s ease; }
+.resume-builder-button:hover:not(:disabled) { transform: translateY(-1px); background: #4c5c44; }
+.resume-builder-button:disabled { opacity: .65; cursor: wait; }
+.resume-builder-button span { font-size: 17px; }
+.report-error { margin-top: 12px; color: #a33b32; font-size: 13px; }
+.report-match { min-width: 146px; padding: 15px 19px; border: 1px solid #dfe2d8; background: #fff; }
+.report-match > span, .report-match strong { display: block; }
+.report-match > span { margin-bottom: 5px; color: #68715c; font-size: 12px; font-weight: 700; letter-spacing: 1.1px; }
+.report-match strong { color: #394d35; font: 500 34px/1.1 "Playfair Display", Georgia, serif; }
+.report-match strong small { margin-left: 4px; color: #85877e; font: 400 14px "DM Sans", sans-serif; }
+
+.report-layout { margin-bottom: 45px; display: grid; grid-template-columns: 220px minmax(0, 1fr) 260px; align-items: start; gap: 20px; }
+.report-sidebar, .report-main-content, .insights-card, .insights-note { border: 1px solid #e5e4de; background: rgba(255, 255, 255, .8); }
+.report-sidebar { min-height: 340px; padding: 20px 13px; }
+.sidebar-label { margin: 0 8px 13px; color: #73756d; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+.report-sidebar > button { width: 100%; min-height: 52px; padding: 0 9px; display: grid; grid-template-columns: 30px 1fr 14px; align-items: center; gap: 5px; border: 0; border-radius: 3px; color: #55574f; background: transparent; text-align: left; font: inherit; font-size: 15px; cursor: pointer; }
+.report-sidebar > button + button { margin-top: 4px; }
+.report-sidebar > button > span { color: #777970; font-size: 12px; }
+.report-sidebar > button b { opacity: 0; font-size: 16px; font-weight: 400; }
+.report-sidebar > button:hover, .report-sidebar > button.active { color: #394d35; background: #eef0e9; }
+.report-sidebar > button.active { font-weight: 600; }
+.report-sidebar > button.active b, .report-sidebar > button:hover b { opacity: 1; }
+.report-history { margin: 24px 0 0; padding-top: 19px; border-top: 1px solid #e8e8e1; }
+.report-history .sidebar-label { margin-bottom: 9px; }
+.report-history .report-history-item { width: 100%; min-height: auto; margin: 0; padding: 10px 9px; display: block; border: 0; border-radius: 3px; color: #686a62; background: transparent; text-align: left; cursor: pointer; }
+.report-history .report-history-item + .report-history-item { margin-top: 3px; }
+.report-history .report-history-item:hover, .report-history .report-history-item.selected { color: #394d35; background: #eef0e9; }
+.report-history-title, .report-history-meta { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.report-history-title { font-size: 14px; font-weight: 600; }
+.report-history-meta { margin-top: 4px; color: #73756d; font-size: 12px; }
+.report-history-empty { padding: 4px 8px; color: #73756d; font-size: 13px; line-height: 1.6; }
+.sidebar-tip { margin: 26px 6px 0; padding: 14px 12px; border-top: 1px solid #e8e8e1; color: #62645d; }
+.sidebar-tip span { color: #748366; font-size: 17px; }
+.sidebar-tip p { margin-top: 7px; font: 500 13px/1.65 "Playfair Display", Georgia, serif; }
+
+.report-main-content { min-width: 0; padding: 27px 28px 30px; }
+.content-kicker { color: #68715c; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+.report-main-content > h2 { margin-top: 10px; color: #292b26; font: 500 30px/1.25 "Playfair Display", Georgia, serif; }
+.content-intro { margin-top: 10px; color: #595b54; font-size: 16px; line-height: 1.7; }
+.report-items { margin-top: 23px; }
+.report-item { padding: 20px 0; border-top: 1px solid #e9e8e2; }
+.item-number { display: block; margin-bottom: 10px; color: #68765d; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+.question-item > h3, .roadmap-item h3 { color: #30322d; font: 600 19px/1.55 "DM Sans", sans-serif; }
+.answer-block { margin-top: 15px; }
+.answer-block h4 { margin-bottom: 6px; color: #383a34; font-size: 14px; font-weight: 700; }
+.answer-block p { color: #55574f; font-size: 16px; line-height: 1.8; white-space: pre-line; }
+.roadmap-item { display: grid; grid-template-columns: 75px minmax(0, 1fr); gap: 14px; }
+.roadmap-item .item-number { margin: 4px 0 0; }
+.roadmap-item ul { margin: 10px 0 0; padding-left: 20px; color: #55574f; font-size: 16px; line-height: 1.8; }
+.roadmap-item li + li { margin-top: 5px; }
+.report-no-items { margin-top: 24px; padding: 18px; color: #55574f; background: #f5f5f0; font-size: 15px; line-height: 1.7; }
+
+.report-insights { display: flex; flex-direction: column; gap: 13px; }
+.insights-card { padding: 20px 17px; }
+.insights-title { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: #666b5c; font-size: 11px; font-weight: 700; letter-spacing: .8px; }
+.insights-title span:last-child { color: #748366; font-size: 16px; }
+.insights-card h2 { margin-top: 17px; color: #30332d; font: 500 22px "Playfair Display", Georgia, serif; }
+.insights-description { margin-top: 7px; color: #595b54; font-size: 14px; line-height: 1.7; }
+.skill-tags { margin-top: 17px; display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag { max-width: 100%; padding: 9px 11px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #deded8; border-radius: 20px; color: #383a34; background: #f7f7f3; font-size: 13px; line-height: 1.35; }
+.skill-tag small { color: #666860; font-size: 11px; text-transform: capitalize; }
+.skill-tag.severity-high { border-color: #e5cbc4; background: #fbf1ee; }
+.skill-tag.severity-high small { color: #a34c3c; }
+.skill-tag.severity-medium { border-color: #e7dcc1; background: #faf7ef; }
+.skill-tag.severity-medium small { color: #94733c; }
+.skill-tag.severity-low { border-color: #d8e0d2; background: #f2f6ef; }
+.skill-tag.severity-low small { color: #637754; }
+.no-gaps { margin-top: 15px; color: #55574f; font-size: 14px; line-height: 1.75; }
+.insights-note { padding: 17px; background: #efefe8; }
+.insights-note span { color: #666b5c; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+.insights-note p { margin-top: 8px; color: #454940; font: 500 16px/1.7 "Playfair Display", Georgia, serif; }
+.report-empty { max-width: 650px; margin: 90px auto; padding: 45px; border: 1px solid #e5e4de; background: #fff; }
+.report-empty h1 { margin-top: 12px; font: 500 36px "Playfair Display", Georgia, serif; }
+.report-empty > p:not(.eyebrow) { margin: 12px 0 24px; color: #55574f; font-size: 17px; line-height: 1.75; }
+.report-empty .create-plan-button { width: fit-content; color: #fff; text-decoration: none; }
+.report-empty-history { margin-top: 32px; text-align: left; }
+.report-empty-history .report-history-item { border: 1px solid #e5e4de; background: #fff; }
+.resume-preview-backdrop { position: fixed; z-index: 30; inset: 0; padding: 24px; display: grid; place-items: center; background: rgba(30, 32, 27, .55); backdrop-filter: blur(3px); }
+.resume-preview-dialog { width: min(100%, 880px); height: min(92vh, 980px); display: flex; flex-direction: column; border: 1px solid #e5e4de; background: #f5f4f0; box-shadow: 0 24px 80px rgba(20, 22, 18, .28); }
+.resume-preview-dialog > header { min-height: 78px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 15px; background: #fff; }
+.resume-preview-dialog .eyebrow { color: #68755d; font-size: 9px; font-weight: 700; letter-spacing: 1.1px; }
+.resume-preview-dialog h2 { margin-top: 4px; color: #292b26; font: 500 22px/1.25 "Playfair Display", Georgia, serif; }
+.resume-preview-close { width: 36px; height: 36px; border: 1px solid #e5e4de; border-radius: 50%; color: #53564e; background: #fff; cursor: pointer; font-size: 23px; line-height: 1; }
+.resume-preview-dialog iframe { width: 100%; min-height: 0; flex: 1; border: 0; background: #e7e7e1; }
+.resume-preview-dialog > footer { min-height: 70px; padding: 12px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; background: #fff; }
+.resume-preview-dialog > footer button { min-height: 42px; padding: 0 15px; border: 1px solid #d8d9d1; border-radius: 3px; cursor: pointer; font: inherit; font-size: 13px; font-weight: 600; }
+.resume-preview-secondary { color: #4e5149; background: #fff; }
+.resume-preview-download { border-color: #394533 !important; color: #fff; background: #394533; }
+.resume-preview-download:hover { background: #4c5c44; }
+
+@media (max-width: 1050px) {
+  .interview-report-page { padding-right: 5%; padding-left: 5%; }
+  .report-layout { grid-template-columns: 190px minmax(0, 1fr); }
+  .report-insights { grid-column: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(190px, .7fr); }
+}
+@media (max-width: 700px) {
+  .interview-report-page { padding: 0 18px; }
+  .report-heading { padding: 37px 0 22px; align-items: flex-start; }
+  .report-heading h1 { font-size: 34px; }
+  .report-heading > div:first-child > p:last-child { font-size: 15px; }
+  .report-match { min-width: 105px; padding: 11px 12px; }
+  .report-match strong { font-size: 28px; }
+  .report-layout { grid-template-columns: 1fr; gap: 14px; }
+  .report-sidebar { min-height: auto; padding: 14px 11px; }
+  .report-sidebar > button { min-height: 44px; }
+  .sidebar-tip { display: none; }
+  .report-main-content { padding: 22px 19px; }
+  .report-main-content > h2 { font-size: 27px; }
+  .question-item > h3, .roadmap-item h3 { font-size: 18px; }
+  .answer-block p, .roadmap-item ul { font-size: 15px; }
+  .report-insights { grid-column: auto; grid-template-columns: 1fr; }
+  .report-empty { margin: 45px auto; padding: 28px 22px; }
+  .report-empty h1 { font-size: 30px; }
+  .interview-report-page .interview-footer { font-size: 11px; }
+}
+@media (max-width: 390px) {
+  .interview-report-page { padding: 0 13px; }
+  .report-heading { flex-direction: column; }
+  .report-match { width: 100%; }
+  .resume-preview-backdrop { padding: 10px; }
+  .resume-preview-dialog { height: 94vh; }
+  .resume-preview-dialog > header, .resume-preview-dialog > footer { padding-right: 13px; padding-left: 13px; }
+  .resume-preview-dialog h2 { font-size: 19px; }
+  .report-sidebar > button { font-size: 14px; }
+  .report-history-title { font-size: 14px; }
+  .report-history-meta { font-size: 12px; }
+  .roadmap-item { grid-template-columns: 1fr; gap: 5px; }
+}
