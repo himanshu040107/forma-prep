@@ -4,6 +4,14 @@ import config from "../config/config.js";
 import jwt from "jsonwebtoken";
 import BlackList from "../models/blacklist.model.js";
 import cookie from "cookie-parser";
+
+const authCookieOptions = {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  path: "/",
+  maxAge: 3600000,
+};
 /**
  * @name registerUser
  * @description Register a new user
@@ -30,7 +38,7 @@ export const registerUser = async (req, res) => {
     const token = jwt.sign({ id: newUser._id }, config.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.cookie("token", token, { httpOnly: true, maxAge: 3600000 });
+    res.cookie("token", token, authCookieOptions);
     await newUser.save();
     res.status(201).json({
       message: "User created successfully",
@@ -70,7 +78,7 @@ export const loginUser = async (req, res) => {
     const token = jwt.sign({ id: user._id }, config.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.cookie("token", token, { httpOnly: true, maxAge: 3600000 });
+    res.cookie("token", token, authCookieOptions);
     res.status(200).json({
       message: "User logged in successfully",
       user: { id: user._id, email: user.email, username: user.username },
@@ -94,7 +102,12 @@ export const logoutUser = async (req, res) => {
     return res.status(400).json({ message: "No token found" });
   }
   await BlackList.create({ token });
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/",
+  });
 
   res.status(200).json({ message: "User logged out successfully" });
 };
