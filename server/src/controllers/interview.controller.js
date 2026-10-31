@@ -160,27 +160,32 @@ export const deleteInterviewReportController = async (req, res) => {
  * @access Private
  */
 export const generateResumePdfController = async (req, res) => {
-  const { interviewId } = req.params;
+  try {
+    const { interviewId } = req.params;
 
-  if (!mongoose.isValidObjectId(interviewId)) {
-    return res.status(400).json({ message: "A valid interview report ID is required" });
-  }
+    if (!mongoose.isValidObjectId(interviewId)) {
+      return res.status(400).json({ message: "A valid interview report ID is required" });
+    }
 
-  const interviewReport = await InterviewReportModel.findOne({
-    _id: interviewId,
-    users: req.user.id,
-  });
-  if (!interviewReport) {
-    return res.status(404).json({ message: "Interview report not found" });
+    const interviewReport = await InterviewReportModel.findOne({
+      _id: interviewId,
+      users: req.user.id,
+    });
+    if (!interviewReport) {
+      return res.status(404).json({ message: "Interview report not found" });
+    }
+    const { resumeText, selfDescription, jobDescription } = interviewReport;
+    const pdfBuffer = await generateResumePdf({
+      resume: resumeText,
+      selfDescription,
+      jobDescription,
+    });
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", `attachment; filename=resume_${interviewId}.pdf`);
+    res.send(pdfBuffer);
+  } catch (err) {
+    console.error("Resume PDF generation failed:", err);
+    res.status(500).json({ message: "Failed to generate resume PDF" });
   }
-  const { resumeText, selfDescription, jobDescription } = interviewReport;
-  const pdfBuffer = await generateResumePdf({
-    resume: resumeText,
-    selfDescription,
-    jobDescription,
-  });
-  
-  res.setHeader("Content-Type", "application/pdf");
-  res.setHeader("Content-Disposition", `attachment; filename=resume_${interviewId}.pdf`);
-  res.send(pdfBuffer);
 };
